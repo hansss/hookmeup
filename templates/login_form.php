@@ -46,13 +46,15 @@ $loginUrl = $facebook -> getLoginUrl($params);
 			});
 
 	});</script>
+	
+
 <div id="content" class="home">
 	<div class="container">
 		<h2 id="lead-title">Discover Who Likes You<br/>While Staying Anonymous </h2>
 		<div class="aligncenter">
 			<a id="facebook-connect-btn" style="cursor: pointer;"><strong>Anonymously Log In</strong></a>
 			<div id="button-popover">
-				<div class="button-popover-text" href="#">Currently not available</div>
+\				<div class="button-popover-text" href="#">Currently not available</div>
 				<div class="button-popover-text" href="#">in your area, coming soon!</div>
 			</div>
 		</div>
