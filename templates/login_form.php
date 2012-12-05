@@ -1,5 +1,3 @@
-<body>
-
 <style>
 #content.home {
 	background: #fff url('img/headerfile2.jpg') bottom center no-repeat;
@@ -16,12 +14,6 @@
 			return false;
 		});
 
-		$('#facebook-connect-btn').onclick(
-			function()
-			{
-			FB.login();
-			},
-		
 		$('#facebook-connect-btn').hover(
 			function()
 			{
@@ -74,6 +66,7 @@
 		</div>
 	</div>
 	</div><!-- /#footer -->
+	<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrf2","beacon-2.newrelic.com","5dd578e240","411538","NlIBN0sCWUFRU01dXA8YIgBNClhcH2dcWFAOWgZMUA1TV0g=",0,2,new Date().getTime()]);</script>
 </body>
 </html>
 
