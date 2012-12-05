@@ -1,3 +1,22 @@
+<?php
+require_once("../includes/facebook.php");
+
+$config = array();
+$config['appId'] = '535694033108343';
+$config['secret'] = '4954b965a28f7ad9309c622dcca5a14';
+$config[ 'fileUpload']= false; //optional
+
+$facebook= new Facebook($config);
+$params= array(
+'redirect_uri'=> 'http://test.com/buy.php'
+);
+$loginUrl = $facebook -> getLoginUrl($params);
+
+?>
+<a href=<?=$loginUrl?>Login</a>
+
+
+
 <style>
 #content.home {
 	background: #fff url('img/headerfile2.jpg') bottom center no-repeat;
@@ -60,9 +79,7 @@
 		</div>
 
 		<div class="span6">
-			<div id="footer-like">
-<!--				<div class="fb-like" data-href="http://www.facebook.com/pages/ChirpMe/177353705667039" data-send="false" data-width="700" data-show-faces="false" style="float:left;position:absolute"></div>-->
-			</div>
+			
 		</div>
 	</div>
 	</div><!-- /#footer -->
