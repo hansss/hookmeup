@@ -34,13 +34,13 @@ line-height: 100%;
 background: -webkit-gradient(linear, left top, left bottom, from(#ACACAC), to(#828282));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-
+</style>
 
 <div id="content" class="home">
 	<div class="container">
 		<h2 id="lead-title">Discover Who Likes You<br/>While Staying Anonymous </h2>
 		<div class="aligncenter">
-			<a id="facebook-connect-btn" style="cursor: pointer;"href=<?=$loginUrl?><strong>Anonymously Log In</strong></a>
+			<a id="facebook-connect-btn" style="cursor: pointer;"><strong>Anonymously Log In</strong></a>
 		</div>
 
 		<div class="bubble green-bubble bubble-1" style="bottom: 100px; left: 60px;">I think Hana is cute!</div>
