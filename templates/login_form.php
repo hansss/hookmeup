@@ -13,7 +13,7 @@ $params= array(
 $loginUrl = $facebook -> getLoginUrl($params);
 
 ?>
-<a href=<?=$loginUrl?>Login</a>
+
 
 
 
@@ -23,40 +23,89 @@ $loginUrl = $facebook -> getLoginUrl($params);
 	height: 450px;
 	padding: 30px 0;
 }
+#lead-title {
+text-align: center;
+padding: 10px 0;
+font-size: 48px;
+color: #828282;
+margin-bottom: 30px;
+font-family: Tahoma, sans-serif;
+line-height: 100%;
+background: -webkit-gradient(linear, left top, left bottom, from(#ACACAC), to(#828282));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 </style>
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		$('#header-popover-close').click(function(){
-			$('#header-popover').fadeOut(60);
-
-			return false;
-		});
-
-		$('#facebook-connect-btn').hover(
-			function()
-			{
-				$('#button-popover').fadeIn(500);
-				$('#facebook-connect-btn').fadeTo(250,0.5);
-			},
-			function()
-			{
-				$('#button-popover').fadeOut(500);
-				$('#facebook-connect-btn').fadeTo(250,1);
-			});
+		$('#facebook-connect-btn').onClick="location.href='../img/headerfile2.png'"
+		
 
 	});</script>
 	
+<script>
+  // Additional JS functions here
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '535694033108343', // App ID
+      channelUrl : 'localhost/html/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional init code here
+    FB.getLoginStatus(function(response) {
+     if (response.status === 'connected') {
+      // connected
+    } else if (response.status === 'not_authorized') {
+    // not_authorized
+    login();
+    } 
+    else {
+    // not_logged_in
+    login();
+    }
+ });
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+   
+   function login() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            // connected
+        } else {
+            // cancelled
+        }
+    });
+}
+
+function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+        console.log('Good to see you, ' + response.name + '.');
+    });
+}
+</script>
+
+<FORM>
+<INPUT TYPE="button" VALUE="LOGIN"
+onClick="FB.login()">
+</body>
 
 <div id="content" class="home">
 	<div class="container">
 		<h2 id="lead-title">Discover Who Likes You<br/>While Staying Anonymous </h2>
 		<div class="aligncenter">
-			<a id="facebook-connect-btn" style="cursor: pointer;"><strong>Anonymously Log In</strong></a>
-			<div id="button-popover">
-\				<div class="button-popover-text" href="#">Currently not available</div>
-				<div class="button-popover-text" href="#">in your area, coming soon!</div>
-			</div>
+			<a id="facebook-connect-btn" style="cursor: pointer;"href=<?=$loginUrl?><strong>Anonymously Log In</strong></a>
 		</div>
 
 		<div class="bubble green-bubble bubble-1" style="bottom: 100px; left: 60px;">I think Hana is cute!</div>
